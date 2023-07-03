@@ -1,0 +1,191 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=15920, tid=0x0000000000004104
+#
+# JRE version:  (8.0_201-b09) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.201-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002fe5800):  JavaThread "Unknown thread" [_thread_in_vm, id=16644, stack(0x0000000002ec0000,0x0000000002fc0000)]
+
+Stack: [0x0000000002ec0000,0x0000000002fc0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000002fe5800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=16644, stack(0x0000000002ec0000,0x0000000002fc0000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000082600000, size: 2010 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 37888K, used 655K [0x00000000d6200000, 0x00000000d8c00000, 0x0000000100000000)
+  eden space 32768K, 2% used [0x00000000d6200000,0x00000000d62a3d80,0x00000000d8200000)
+  from space 5120K, 0% used [0x00000000d8700000,0x00000000d8700000,0x00000000d8c00000)
+  to   space 5120K, 0% used [0x00000000d8200000,0x00000000d8200000,0x00000000d8700000)
+ ParOldGen       total 86016K, used 0K [0x0000000082600000, 0x0000000087a00000, 0x00000000d6200000)
+  object space 86016K, 0% used [0x0000000082600000,0x0000000082600000,0x0000000087a00000)
+ Metaspace       used 775K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000034b0000,0x00000000038a0000] byte_map_base: 0x000000000309d000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000538f4ce0
+ Begin Bits: [0x0000000016ef0000, 0x0000000018e58000)
+ End Bits:   [0x0000000018e58000, 0x000000001adc0000)
+
+Polling page: 0x0000000002fc0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000007ef0000, 0x0000000008160000, 0x0000000016ef0000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.138 loading class java/lang/Short
+Event: 0.138 loading class java/lang/Short done
+Event: 0.138 loading class java/lang/Integer
+Event: 0.138 loading class java/lang/Integer done
+Event: 0.138 loading class java/lang/Long
+Event: 0.139 loading class java/lang/Long done
+Event: 0.169 loading class java/lang/NullPointerException
+Event: 0.169 loading class java/lang/NullPointerException done
+Event: 0.169 loading class java/lang/ArithmeticException
+Event: 0.169 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff644d90000 - 0x00007ff644dc7000 	C:\Program Files\Java\jdk1.8.0_201\jre\bin\javaw.exe
+0x00007ffd35550000 - 0x00007ffd35731000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007ffd34cd0000 - 0x00007ffd34d82000 	C:\windows\System32\KERNEL32.DLL
+0x00007ffd32570000 - 0x00007ffd327e3000 	C:\windows\System32\KERNELBASE.dll
+0x0000000056ee0000 - 0x0000000056f75000 	C:\windows\System32\SYSFER.DLL
+0x00007ffd34e70000 - 0x00007ffd34f11000 	C:\windows\System32\ADVAPI32.dll
+0x00007ffd35480000 - 0x00007ffd3551e000 	C:\windows\System32\msvcrt.dll
+0x00007ffd331c0000 - 0x00007ffd3321b000 	C:\windows\System32\sechost.dll
+0x00007ffd32a00000 - 0x00007ffd32b24000 	C:\windows\System32\RPCRT4.dll
+0x00007ffd34f50000 - 0x00007ffd350e0000 	C:\windows\System32\USER32.dll
+0x00007ffd31dc0000 - 0x00007ffd31de0000 	C:\windows\System32\win32u.dll
+0x00007ffd34f20000 - 0x00007ffd34f48000 	C:\windows\System32\GDI32.dll
+0x00007ffd31980000 - 0x00007ffd31b12000 	C:\windows\System32\gdi32full.dll
+0x00007ffd32940000 - 0x00007ffd329df000 	C:\windows\System32\msvcp_win.dll
+0x00007ffd327f0000 - 0x00007ffd328e8000 	C:\windows\System32\ucrtbase.dll
+0x00007ffd11690000 - 0x00007ffd118f9000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.648_none_fb45a0e93062a6d2\COMCTL32.dll
+0x00007ffd32c80000 - 0x00007ffd32fa2000 	C:\windows\System32\combase.dll
+0x00007ffd31de0000 - 0x00007ffd31e5a000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007ffd337f0000 - 0x00007ffd3381d000 	C:\windows\System32\IMM32.DLL
+0x00007ffd30600000 - 0x00007ffd30788000 	C:\Program Files\Avecto\Privilege Guard Client\PGHook.dll
+0x00007ffd31290000 - 0x00007ffd312a7000 	C:\windows\SYSTEM32\CRYPTSP.dll
+0x00007ffd30a90000 - 0x00007ffd30ac3000 	C:\windows\system32\rsaenh.dll
+0x00007ffd313c0000 - 0x00007ffd313e5000 	C:\windows\SYSTEM32\bcrypt.dll
+0x00007ffd312b0000 - 0x00007ffd312bb000 	C:\windows\SYSTEM32\CRYPTBASE.dll
+0x00007ffd33890000 - 0x00007ffd34cd0000 	C:\windows\System32\shell32.dll
+0x00007ffd328f0000 - 0x00007ffd32939000 	C:\windows\System32\cfgmgr32.dll
+0x00007ffd32fb0000 - 0x00007ffd33059000 	C:\windows\System32\shcore.dll
+0x00007ffd31e60000 - 0x00007ffd3256d000 	C:\windows\System32\windows.storage.dll
+0x00007ffd33820000 - 0x00007ffd33871000 	C:\windows\System32\shlwapi.dll
+0x00007ffd31900000 - 0x00007ffd31911000 	C:\windows\System32\kernel.appcore.dll
+0x00007ffd318b0000 - 0x00007ffd318cf000 	C:\windows\System32\profapi.dll
+0x00007ffd31860000 - 0x00007ffd318ac000 	C:\windows\System32\powrprof.dll
+0x00007ffd318d0000 - 0x00007ffd318da000 	C:\windows\System32\FLTLIB.DLL
+0x0000000068000000 - 0x0000000068066000 	C:\windows\System32\QIPCAP64.dll
+0x00007ffd30eb0000 - 0x00007ffd30f6e000 	C:\windows\SYSTEM32\DNSAPI.dll
+0x00007ffd34df0000 - 0x00007ffd34e5c000 	C:\windows\System32\WS2_32.dll
+0x00007ffd34e60000 - 0x00007ffd34e68000 	C:\windows\System32\NSI.dll
+0x00007ffd30e60000 - 0x00007ffd30e98000 	C:\windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ffd050c0000 - 0x00007ffd0512a000 	C:\Program Files\Manufacturer\Endpoint Agent\prntm64.dll
+0x00007ffd350e0000 - 0x00007ffd35231000 	C:\windows\System32\ole32.dll
+0x00007ffd32bb0000 - 0x00007ffd32c73000 	C:\windows\System32\OLEAUT32.dll
+0x00007ffd23fb0000 - 0x00007ffd23fbc000 	C:\windows\SYSTEM32\Secur32.dll
+0x00007ffd26350000 - 0x00007ffd263d5000 	C:\windows\SYSTEM32\WINSPOOL.DRV
+0x00007ffd1b030000 - 0x00007ffd1b11f000 	C:\windows\SYSTEM32\MSVCR120.dll
+0x00007ffd1b270000 - 0x00007ffd1b316000 	C:\windows\SYSTEM32\MSVCP120.dll
+0x00007ffd2c340000 - 0x00007ffd2c4f4000 	C:\windows\SYSTEM32\PROPSYS.dll
+0x00007ffd31790000 - 0x00007ffd317c0000 	C:\windows\SYSTEM32\SSPICLI.DLL
+0x0000000053980000 - 0x0000000053a51000 	C:\Program Files\Java\jdk1.8.0_201\jre\bin\msvcr100.dll
+0x00000000530d0000 - 0x0000000053974000 	C:\Program Files\Java\jdk1.8.0_201\jre\bin\server\jvm.dll
+0x0000000002e70000 - 0x0000000002e78000 	C:\windows\System32\PSAPI.DLL
+0x00007ffd1b020000 - 0x00007ffd1b029000 	C:\windows\SYSTEM32\WSOCK32.dll
+0x00007ffd28ab0000 - 0x00007ffd28ad3000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007ffd23b80000 - 0x00007ffd23b8a000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007ffd28a80000 - 0x00007ffd28aaa000 	C:\windows\SYSTEM32\WINMMBASE.dll
+0x00007ffd066e0000 - 0x00007ffd066ef000 	C:\Program Files\Java\jdk1.8.0_201\jre\bin\verify.dll
+0x00007ffd066b0000 - 0x00007ffd066d9000 	C:\Program Files\Java\jdk1.8.0_201\jre\bin\java.dll
+0x00007ffd06650000 - 0x00007ffd06666000 	C:\Program Files\Java\jdk1.8.0_201\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: Herramienta2.Tabla
+java_class_path (initial): C:\DevOps\Herramienta3\target\classes;C:\Users\edgar.reza.sanchez\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\edgar.reza.sanchez\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;C:\Users\edgar.reza.sanchez\Downloads\testng-6.14.3.jar;C:\Users\edgar.reza.sanchez\.m2\repository\com\miglayout\miglayout-javafx\5.0\miglayout-javafx-5.0.jar;C:\Users\edgar.reza.sanchez\.m2\repository\com\miglayout\miglayout-core\5.0\miglayout-core-5.0.jar;C:\Users\edgar.reza.sanchez\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\slf4j\slf4j-api\1.7.12\slf4j-api-1.7.12.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.12\jcl-over-slf4j-1.7.12.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\slf4j\slf4j-log4j12\1.7.12\slf4j-log4j12-1.7.12.jar;C:\Users\edgar.reza.sanchez\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-java\3.9.1\selenium-java-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-api\3.9.1\selenium-api-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.9.1\selenium-chrome-driver-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.9.1\selenium-edge-driver-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.9.1\selenium-firefox-driver-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.9.1\selenium-ie-driver-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.9.1\selenium-opera-driver-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.9.1\selenium-remote-driver-3.9.1.jar;C:\Users\edgar.reza.sanchez\.m2\repository\org\selenium
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_211
+USERNAME=edgar.reza.sanchez
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17134 (10.0.17134.648)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8232136k(1237472k free), swap 11779780k(5560k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.201-b09) for windows-amd64 JRE (1.8.0_201-b09), built on Dec 15 2018 18:36:39 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Mon Jun 24 12:56:11 2019
+timezone: Central Daylight Time (Mexico)
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
